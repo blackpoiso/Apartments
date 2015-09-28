@@ -1,0 +1,11 @@
+List<String> aparts = getConfig().getStringList("Apartments");
+        if (getConfig().get(player.getName() + ".Setting").equals("True"))
+        {
+          if (!aparts.contains(block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ()))
+          {
+            aparts.add(block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ());
+            getConfig().set("Apartments", aparts);
+            saveConfig();
+            player.sendMessage("Worked");
+          }
+        }
